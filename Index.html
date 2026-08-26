@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ulugbek Medetov — Systems Administrator</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ['Cormorant Garamond', 'Georgia', 'serif'],
+            sans: ['DM Sans', 'system-ui', 'sans-serif'],
+          },
+          colors: {
+            base: '#F6F5F3',
+            surface: '#FFFFFF',
+            muted: '#8A8A8A',
+            ink: '#1A1A1A',
+            border: '#E4E2DF',
+            accent: '#484747',
+            warm: '#EAE8E5',
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+    .reveal { opacity: 0; transform: translateY(22px); transition: all 0.9s cubic-bezier(0.16,1,0.3,1); }
+    .reveal.in-view { opacity: 1; transform: none; }
+    .line-accent::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 1px; background: #E4E2DF; }
+    .dot-accent::before { content: ""; position: absolute; left: -5px; top: 8px; width: 9px; height: 9px; border-radius: 9999px; background: #1A1A1A; border: 2px solid #F6F5F3; }
+    input:focus, textarea:focus { outline: none; box-shadow: 0 0 0 2px #E4E2DF; }
+    .card-hover { transition: transform 0.4s cubic-bezier(0.16,1,0.3,1), box-shadow 0.4s ease; }
+    .card-hover:hover { transform: translateY(-4px); box-shadow: 0 18px 40px -12px rgba(26,26,26,0.08); }
+ .hero-grad { background: linear-gradient(180deg, #F6F5F3 0%, #EAE8E5 100%); }
+    .dark-grad { background: linear-gradient(180deg, #1A1A1A 0%, #232323 100%); }
+    .contact-grid { background-color: #292827; background-image: radial-gradient(circle at 82% 18%, rgba(126,113,103,0.38), transparent 30%), radial-gradient(circle at 14% 84%, rgba(65,63,62,0.7), transparent 34%), linear-gradient(135deg, #171616 0%, #353332 52%, #242322 100%); }
+    .contact-grid::before { content: ""; position: absolute; inset: 0; background-image: linear-gradient(rgba(236,229,221,0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(236,229,221,0.035) 1px, transparent 1px); background-size: 4rem 4rem; pointer-events: none; }
+  </style>
+</head>
+<body class="bg-base text-ink font-sans selection:bg-accent selection:text-white">
+
+  <!-- Nav -->
+  <nav class="fixed top-0 inset-x-0 z-50 bg-[#292827]/95 backdrop-blur border-b border-white/15">
+    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="#" class="font-serif text-xl tracking-tight text-surface">Ulugbek Medetov</a>
+      <div class="hidden md:flex items-center gap-8 text-xs font-semibold uppercase tracking-widest text-warm/70">
+        <a href="#about" class="hover:text-surface transition-colors">About</a>
+        <a href="#lifestyle" class="hover:text-surface transition-colors">Lifestyle</a>
+        <a href="#experience" class="hover:text-surface transition-colors">Experience</a>
+        <a href="#projects" class="hover:text-surface transition-colors">Projects</a>
+        <a href="#contact" class="hover:text-surface transition-colors">Contact</a>
+      </div>
+      <button id="mobMenuBtn" class="md:hidden text-surface" aria-label="Menu">☰</button>
+    </div>
+    <div id="mobMenu" class="hidden md:hidden border-t border-white/15 bg-[#292827] px-6 py-5 space-y-3 text-sm font-semibold text-warm/70">
+      <a href="#about" class="block hover:text-surface">About</a>
+      <a href="#lifestyle" class="block hover:text-surface">Lifestyle</a>
+      <a href="#experience" class="block hover:text-surface">Experience</a>
+      <a href="#projects" class="block hover:text-surface">Projects</a>
+      <a href="#contact" class="block hover:text-surface">Contact</a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="min-h-[88vh] flex items-center pt-16 hero-grad">
+ <div class="max-w-6xl mx-auto px-6 w-full grid md:grid-cols-2 gap-14 items-center">
+      <div class="reveal">
+        <p class="text-xs font-semibold tracking-[0.2em] uppercase text-muted mb-5">Systems Administrator</p>
+        <h1 class="font-serif text-[clamp(3rem,6vw,5.5rem)] leading-[0.95] tracking-tight mb-7">
+          Ulugbek<br>Medetov </h1>
+        <p class="text-muted leading-relaxed max-w-md text-lg mb-10 font-light">
+          It is nice to have you here. My name is Ulugbek, also referred to as Mero. I am a Bachelor of Science in Computer and Information Sciences and currently a Systems Administrator. My expertise lies in infrastructure administration, data analysis, and research.
+ </p>
+        <div class="flex flex-wrap gap-3">
+          <a href="https://www.linkedin.com/in/ulugbek-medetov" target="_blank" class="inline-flex items-center gap-2 px-6 py-3 bg-accent text-surface text-xs font-semibold uppercase tracking-widest rounded-full hover:opacity-80 transition-opacity">LinkedIn</a>
+          <a href="https://github.com/MedetovUlugbek" target="_blank" class="inline-flex items-center gap-2 px-6 py-3 bg-accent text-surface text-xs font-semibold uppercase tracking-widest rounded-full hover:opacity-80 transition-opacity">GitHub</a>
+          <a href="https://www.instagram.com/saemteun2.0/" target="_blank" class="inline-flex items-center gap-2 px-6 py-3 bg-accent text-surface text-xs font-semibold uppercase tracking-widest rounded-full hover:opacity-80 transition-opacity">Instagram</a>
+        </div>
+      </div>
+      <div class="reveal delay-100 flex justify-center md:justify-end">
+        <div class="relative w-72 h-72 md:w-[28rem] md:h-[28rem]">
+          <div class="absolute inset-0 rounded-full bg-warm"></div>
+          <img src="portrait2.png" alt="Ulugbek Medetov" class="absolute inset-3 w-[calc(100%-1.5rem)] h-[calc(100%-1.5rem)] rounded-full object-cover border border-border">
+          <div class="absolute -bottom-4 -right-2 bg-accent text-white text-[10px] font-bold uppercase tracking-widest px-4 py-2 rounded-full shadow-sm">HOUSTON, TX</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Lifestyle -->
+  <section id="lifestyle" class="py-24 bg-base">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="reveal flex flex-col md:flex-row md:items-end justify-between mb-14 gap-4">
+        <div>
+          <p class="text-xs font-semibold tracking-[0.2em] uppercase text-muted mb-3">Lifestyle</p>
+          <h2 class="font-serif text-[clamp(2rem,4vw,2.8rem)] leading-[1.1]">What I Do Outside of Work.</h2>
+        </div>
+        <p class="text-muted max-w-sm text-sm leading-relaxed">A few habits from life outside of work.</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="reveal space-y-5">
+          <div class="overflow-hidden rounded-2xl border border-border aspect-[3/4] shadow-sm">
+            <img src="music.png" alt="Urban exploration" class="object-cover w-full h-full contrast-90 hover:scale-105 transition-all duration-1000">
+          </div>
+          <p class="text-sm text-muted leading-relaxed">Music has always been a part of my life. During small breaks, you can see me wearing headphones.</p>
+        </div>
+        <div class="reveal space-y-5 delay-75">
+          <div class="overflow-hidden rounded-2xl border border-border aspect-[3/4] shadow-sm">
+            <img src="volleyball.png" alt="Reading corner" class="object-cover w-full h-full contrast-90 hover:scale-105 transition-all duration-1000">
+          </div>
+          <p class="text-sm text-muted leading-relaxed">I fell in love with volleyball in college. I play it once in a while, as it helps me physically and mentally.</p>
+        </div>
+        <div class="reveal space-y-5 delay-150">
+          <div class="overflow-hidden rounded-2xl border border-border aspect-[3/4] shadow-sm">
+            <img src="programming.png" alt="Starfield" class="object-cover w-full h-full contrast-90 hover:scale-105 transition-all duration-1000">
+          </div>
+          <p class="text-sm text-muted leading-relaxed">I don't particularly enjoy writing code all day long. However, creating something always brings me joy.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience -->
+  <section id="experience" class="py-24 bg-surface">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="reveal mb-16">
+        <p class="text-xs font-semibold tracking-[0.2em] uppercase text-muted mb-4">Experience</p>
+        <h2 class="font-serif text-[clamp(2rem,4vw,2.8rem)] leading-[1.1]">Where I’ve put my hands<br>on the stack.</h2>
+      </div>
+      <div class="reveal relative pl-6 space-y-14 max-w-2xl line-accent">
+        <!-- DTF Printer USA LLC -->
+        <div class="relative dot-accent pl-8">
+          <div class="flex flex-col sm:flex-row sm:items-baseline justify-between mb-3">
+            <h3 class="font-serif text-2xl">DTF PRINTER USA LLC</h3>
+            <span class="text-[11px] font-bold text-muted uppercase tracking-widest">Aug 2026 — Present</span>
+          </div>
+          <p class="text-sm font-bold uppercase tracking-widest text-ink mb-3">Systems Administrator</p>
+          <p class="text-muted text-sm leading-[1.8]">
+            Manage and maintain computer systems, servers, networks, and cloud services. Troubleshoot hardware, software, and connectivity issues across Windows, macOS, and Linux environments. Support system security, production technology, and technical documentation to ensure reliable business operations.
+          </p>
+        </div>
+        <!-- NASA -->
+        <div class="relative dot-accent pl-8">
+          <div class="flex flex-col sm:flex-row sm:items-baseline justify-between mb-3">
+            <h3 class="font-serif text-2xl">NASA — CIESIN</h3>
+            <span class="text-[11px] font-bold text-muted uppercase tracking-widest">Aug 2025 — Present</span>
+          </div>
+          <p class="text-sm font-bold uppercase tracking-widest text-ink mb-3">Data Analyst</p>
+          <p class="text-muted text-sm leading-[1.8]">
+            Conduct open data analysis following FAIR and CARE principles. Clean, process, and analyze data using Python. Co-develop open data products and documentation to ensure reproducibility and accessibility across research institutions.
+            
+          </p>
+          <a href="https://ciesin-geospatial.github.io/TOPSTSCHOOL-disasters/m303-maui-flood-analysis.html" target="_blank" rel="noopener noreferrer" class="inline-flex origin-left mt-4 text-xs font-bold uppercase tracking-widest text-ink hover:text-accent visited:text-muted hover:scale-[1.03] transition-all duration-300">View Maui flood analysis &rarr;</a>
+        </div>
+        <!-- Education -->
+        <div class="relative dot-accent pl-8">
+          <div class="flex flex-col sm:flex-row sm:items-baseline justify-between mb-3">
+            <h3 class="font-serif text-2xl">NATIONAL LOUIS UNIVERSITY</h3>
+            <span class="text-[11px] font-bold text-muted uppercase tracking-widest">2022 — 2026</span>
+          </div>
+          <p class="text-sm font-bold uppercase tracking-widest text-ink mb-3">B.S. in Computer Science</p>
+          <p class="text-muted text-sm leading-[1.8]">
+            Apply advanced knowledge of computer information systems and analytics to solve complex technical and business challenges. Design and support solutions involving operating systems, networks, cloud computing, programming, databases, and systems analysis. Use artificial intelligence, machine learning, data mining, data warehousing, R programming, and statistical methods to deliver reliable, data-driven results.
+          </p>
+          <div class="relative inline-block group mt-4">
+            <a href="#diploma-preview" class="inline-flex origin-left text-xs font-bold uppercase tracking-widest text-ink hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent visited:text-muted hover:scale-[1.03] transition-all duration-300" aria-describedby="diploma-preview">Diploma</a>
+            <div id="diploma-preview" role="tooltip" oncontextmenu="return false" class="pointer-events-none invisible fixed right-4 top-1/2 z-50 aspect-[11/8.5] w-[min(32rem,calc(100vw-2rem))] origin-center -translate-x-4 -translate-y-1/2 overflow-hidden rounded-xl border border-border bg-surface opacity-0 shadow-2xl transition-all duration-500 ease-out group-hover:pointer-events-auto group-hover:visible group-hover:translate-x-0 group-hover:opacity-100 group-focus-within:pointer-events-auto group-focus-within:visible group-focus-within:translate-x-0 group-focus-within:opacity-100">
+              <iframe src="Diploma.pdf#toolbar=0&navpanes=0&scrollbar=0" title="Diploma preview" class="pointer-events-none h-full w-full select-none"></iframe>
+              <div class="absolute inset-0"></div>
+            </div>
+          </div>
+        </div>
+        <!-- Certifications -->
+        <div class="relative dot-accent pl-8">
+          <div class="flex flex-col sm:flex-row sm:items-baseline justify-between mb-3">
+            <h3 class="font-serif text-2xl">CERTIFICATIONS</h3>
+            <span class="text-[11px] font-bold text-muted uppercase tracking-widest">2021 - ongoing</span>
+          </div>
+          <div class="space-y-4 text-sm">
+            <div class="relative flex w-full items-center justify-between gap-4">
+              <div class="relative inline-block group">
+                <a href="#cert-data-analytics" class="inline-flex origin-left text-muted hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent visited:text-muted hover:scale-[1.02] transition-all duration-300" aria-describedby="cert-data-analytics">Google Data Analytics Specialization</a>
+                <div id="cert-data-analytics" role="tooltip" oncontextmenu="return false" class="pointer-events-none invisible fixed right-4 top-1/2 z-50 aspect-[11/8.5] w-[min(32rem,calc(100vw-2rem))] origin-center -translate-x-4 -translate-y-1/2 overflow-hidden rounded-xl border border-border bg-surface opacity-0 shadow-2xl transition-all duration-500 ease-out group-hover:pointer-events-auto group-hover:visible group-hover:translate-x-0 group-hover:opacity-100 group-focus-within:pointer-events-auto group-focus-within:visible group-focus-within:translate-x-0 group-focus-within:opacity-100">
+                <iframe src="Google Data Analytics Specialization.pdf#toolbar=0&navpanes=0&scrollbar=0" title="Google Data Analytics Specialization certificate preview" class="pointer-events-none h-full w-full select-none"></iframe>
+                <div class="absolute inset-0"></div>
+                </div>
+              </div>
+              <span class="shrink-0 text-[11px] font-bold uppercase tracking-widest text-muted">2025</span>
+            </div>
+            <div class="relative flex w-full items-center justify-between gap-4">
+              <div class="relative inline-block group">
+                <a href="#cert-digital-marketing" class="inline-flex origin-left text-muted hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent visited:text-muted hover:scale-[1.02] transition-all duration-300" aria-describedby="cert-digital-marketing">Google Digital Marketing &amp; E-Commerce Specialization</a>
+                <div id="cert-digital-marketing" role="tooltip" oncontextmenu="return false" class="pointer-events-none invisible fixed right-4 top-1/2 z-50 aspect-[11/8.5] w-[min(32rem,calc(100vw-2rem))] origin-center -translate-x-4 -translate-y-1/2 overflow-hidden rounded-xl border border-border bg-surface opacity-0 shadow-2xl transition-all duration-500 ease-out group-hover:pointer-events-auto group-hover:visible group-hover:translate-x-0 group-hover:opacity-100 group-focus-within:pointer-events-auto group-focus-within:visible group-focus-within:translate-x-0 group-focus-within:opacity-100">
+                <iframe src="Google Digital Marketing and E-Commerce Specialization.pdf#toolbar=0&navpanes=0&scrollbar=0" title="Google Digital Marketing and E-Commerce certificate preview" class="pointer-events-none h-full w-full select-none"></iframe>
+                <div class="absolute inset-0"></div>
+                </div>
+              </div>
+              <span class="shrink-0 text-[11px] font-bold uppercase tracking-widest text-muted">2025</span>
+            </div>
+            <div class="relative flex w-full items-center justify-between gap-4">
+              <div class="relative inline-block group">
+                <a href="#cert-collaboration" class="inline-flex origin-left text-muted hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent visited:text-muted hover:scale-[1.02] transition-all duration-300" aria-describedby="cert-collaboration">High Performance Collaboration</a>
+                <div id="cert-collaboration" role="tooltip" oncontextmenu="return false" class="pointer-events-none invisible fixed right-4 top-1/2 z-50 aspect-[11/8.5] w-[min(32rem,calc(100vw-2rem))] origin-center -translate-x-4 -translate-y-1/2 overflow-hidden rounded-xl border border-border bg-surface opacity-0 shadow-2xl transition-all duration-500 ease-out group-hover:pointer-events-auto group-hover:visible group-hover:translate-x-0 group-hover:opacity-100 group-focus-within:pointer-events-auto group-focus-within:visible group-focus-within:translate-x-0 group-focus-within:opacity-100">
+                <iframe src="High Performance Collaboration- Leadership, Teamwork, and Negotiation.pdf#toolbar=0&navpanes=0&scrollbar=0" title="High Performance Collaboration certificate preview" class="pointer-events-none h-full w-full select-none"></iframe>
+                <div class="absolute inset-0"></div>
+                </div>
+              </div>
+              <span class="shrink-0 text-[11px] font-bold uppercase tracking-widest text-muted">2022</span>
+            </div>
+            <div class="relative flex w-full items-center justify-between gap-4">
+              <div class="relative inline-block group">
+                <a href="#cert-mental-tools" class="inline-flex origin-left text-muted hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent visited:text-muted hover:scale-[1.02] transition-all duration-300" aria-describedby="cert-mental-tools">Powerful Mental Tools to Help You Master Tough Subjects</a>
+                <div id="cert-mental-tools" role="tooltip" oncontextmenu="return false" class="pointer-events-none invisible fixed right-4 top-1/2 z-50 aspect-[11/8.5] w-[min(32rem,calc(100vw-2rem))] origin-center -translate-x-4 -translate-y-1/2 overflow-hidden rounded-xl border border-border bg-surface opacity-0 shadow-2xl transition-all duration-500 ease-out group-hover:pointer-events-auto group-hover:visible group-hover:translate-x-0 group-hover:opacity-100 group-focus-within:pointer-events-auto group-focus-within:visible group-focus-within:translate-x-0 group-focus-within:opacity-100">
+                <iframe src="%20Powerful%20mental%20tools%20to%20help%20you%20master%20tough%20subjects.pdf#toolbar=0&navpanes=0&scrollbar=0" title="Powerful Mental Tools certificate preview" class="pointer-events-none h-full w-full select-none"></iframe>
+                <div class="absolute inset-0"></div>
+                </div>
+              </div>
+              <span class="shrink-0 text-[11px] font-bold uppercase tracking-widest text-muted">2021</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects" class="py-24 bg-base">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="reveal mb-16">
+        <p class="text-xs font-semibold tracking-[0.2em] uppercase text-muted mb-4">Projects</p>
+        <h2 class="font-serif text-[clamp(2rem,4vw,2.8rem)] leading-[1.1]">Selected work and<br>learning experiments.</h2>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-7">
+        <!-- Card 1 -->
+        <div class="reveal bg-surface rounded-2xl border border-border p-7 card-hover h-full flex flex-col">
+          <div class="mb-5">
+            <h3 class="font-serif text-xl">Northstar Commerce AI Empowered BI Analysis</h3>
+          </div>
+          <p class="text-muted text-sm leading-relaxed mb-8">Business intelligence exploration notebooks — data cleaning, modeling and visualization experiments.</p>
+          <a href="https://github.com/MedetovUlugbek/bi-journey" target="_blank" class="mt-auto inline-flex items-center text-xs font-bold uppercase tracking-widest text-ink hover:text-muted transition-colors">View on GitHub →</a>
+        </div>
+        <!-- Card 2 -->
+        <div class="reveal bg-surface rounded-2xl border border-border p-7 card-hover delay-75 h-full flex flex-col">
+          <div class="mb-5">
+            <h3 class="font-serif text-xl">Tableau Vizualizations</h3>
+          </div>
+          <p class="text-muted text-sm leading-relaxed mb-8">Interactive KPI dashboard visualizing total sales, profit, quantity and category trends for rapid decision-making.</p>
+          <a href="https://public.tableau.com/app/profile/ulugbek.medetov/vizzes" target="_blank" rel="noopener noreferrer" class="mt-auto inline-flex items-center text-xs font-bold uppercase tracking-widest text-ink hover:text-muted transition-colors">View on Tableau →</a>
+        </div>
+        <!-- Card 3 -->
+        <div class="reveal bg-surface rounded-2xl border border-border p-7 card-hover delay-150 h-full flex flex-col">
+          <div class="mb-5">
+            <h3 class="font-serif text-xl">Internship Data Analysis</h3>
+          </div>
+          <p class="text-muted text-sm leading-relaxed mb-8">Research and data analysis work completed during my internship, focused on disaster data and reproducible insights.</p>
+          <a href="https://github.com/MedetovUlugbek/TOPSTSCHOOL-disasters" target="_blank" rel="noopener noreferrer" class="mt-auto inline-flex items-center text-xs font-bold uppercase tracking-widest text-ink hover:text-muted transition-colors">View on GitHub →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="contact-grid relative overflow-hidden py-28 text-surface">
+    <div class="relative z-10 max-w-6xl mx-auto px-6 grid lg:grid-cols-[1fr_0.85fr] gap-16 lg:gap-24 items-center">
+      <div class="reveal">
+        <p class="text-xs font-semibold tracking-[0.2em] uppercase text-warm mb-10">Contact</p>
+        <h2 class="font-serif text-[clamp(3.5rem,8vw,7.5rem)] leading-[0.88] tracking-tight max-w-3xl">Let’s connect.</h2>
+        <div class="mt-14 flex flex-wrap gap-3">
+          <a href="https://www.linkedin.com/in/ulugbek-medetov" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-6 py-3 bg-accent text-surface text-xs font-semibold uppercase tracking-widest rounded-full hover:opacity-80 transition-opacity">LinkedIn</a>
+          <a href="https://github.com/MedetovUlugbek" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-6 py-3 bg-accent text-surface text-xs font-semibold uppercase tracking-widest rounded-full hover:opacity-80 transition-opacity">GitHub</a>
+          <a href="https://www.instagram.com/saemteun2.0/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-6 py-3 bg-accent text-surface text-xs font-semibold uppercase tracking-widest rounded-full hover:opacity-80 transition-opacity">Instagram</a>
+        </div>
+      </div>
+      <div class="reveal delay-100 border border-white/20 bg-[#353332] p-7 sm:p-10 text-left shadow-2xl">
+        <form id="contactForm" action="https://formsubmit.co/medetovulugbek@gmail.com" method="POST" class="space-y-6">
+          <input type="hidden" name="_subject" value="New portfolio message">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_template" value="table">
+          <div>
+            <label class="block text-[11px] font-bold uppercase tracking-widest text-warm mb-2">Name</label>
+            <input name="name" type="text" required class="w-full bg-transparent border-0 border-b border-white/30 px-0 py-3 text-sm text-surface placeholder-white/60 focus:border-accent" placeholder="Your name">
+          </div>
+          <div>
+            <label class="block text-[11px] font-bold uppercase tracking-widest text-warm mb-2">Email</label>
+            <input name="_replyto" type="email" required class="w-full bg-transparent border-0 border-b border-white/30 px-0 py-3 text-sm text-surface placeholder-white/60 focus:border-accent" placeholder="you@example.com">
+          </div>
+          <div>
+            <label class="block text-[11px] font-bold uppercase tracking-widest text-warm mb-2">Message</label>
+            <textarea name="message" rows="4" required class="w-full resize-none bg-transparent border-0 border-b border-white/30 px-0 py-3 text-sm text-surface placeholder-white/60 focus:border-accent" placeholder="What would you like to discuss?"></textarea>
+          </div>
+          <button type="submit" class="inline-flex items-center gap-3 border border-white/30 px-5 py-3 text-xs font-bold uppercase tracking-widest text-surface transition-colors hover:border-accent hover:text-accent">Send <span aria-hidden="true">&rarr;</span></button>
+        </form>
+        <div id="formThanks" class="hidden text-center py-12">
+          <p class="font-serif text-3xl mb-2">Signal received.</p>
+          <p class="text-muted text-sm">I’ll get back to you as soon as possible.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-8 border-t border-white/10 dark-grad">
+    <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
+      <p class="text-[11px] text-warm/40 font-medium uppercase tracking-widest">© Ulugbek Medetov. All Rights Reserved.</p>
+      <p class="text-[11px] text-warm/40 font-medium uppercase tracking-widest">Houston, Texas</p>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu
+    const btn = document.getElementById('mobMenuBtn');
+    const menu = document.getElementById('mobMenu');
+    btn.addEventListener('click', () => { menu.classList.toggle('hidden'); });
+
+    // Scroll reveal
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => { if(entry.isIntersecting) entry.target.classList.add('in-view'); });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  </script>
+</body>
+</html>
