@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.ulugbekmedetov.com/sitemap.xml
+Sitemap: https://ulugbekmedetov.com/sitemap.xml
