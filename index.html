@@ -310,28 +310,22 @@
         </div>
       </div>
       <div class="reveal delay-100 border border-white/20 bg-[#353332] p-7 sm:p-10 text-left shadow-2xl">
-        <form id="contactForm" action="https://formsubmit.co/medetovulugbek@gmail.com" method="POST" class="space-y-6">
-          <input type="hidden" name="_subject" value="New portfolio message">
-          <input type="hidden" name="_captcha" value="false">
-          <input type="hidden" name="_template" value="table">
+        <form id="contactForm" class="space-y-6">
           <div>
             <label class="block text-[11px] font-bold uppercase tracking-widest text-warm mb-2">Name</label>
             <input name="name" type="text" required class="w-full bg-transparent border-0 border-b border-white/30 px-0 py-3 text-sm text-surface placeholder-white/60 focus:border-accent" placeholder="Your name">
           </div>
           <div>
             <label class="block text-[11px] font-bold uppercase tracking-widest text-warm mb-2">Email</label>
-            <input name="_replyto" type="email" required class="w-full bg-transparent border-0 border-b border-white/30 px-0 py-3 text-sm text-surface placeholder-white/60 focus:border-accent" placeholder="you@example.com">
+            <input name="email" type="email" required class="w-full bg-transparent border-0 border-b border-white/30 px-0 py-3 text-sm text-surface placeholder-white/60 focus:border-accent" placeholder="you@example.com">
           </div>
           <div>
             <label class="block text-[11px] font-bold uppercase tracking-widest text-warm mb-2">Message</label>
             <textarea name="message" rows="4" required class="w-full resize-none bg-transparent border-0 border-b border-white/30 px-0 py-3 text-sm text-surface placeholder-white/60 focus:border-accent" placeholder="What would you like to discuss?"></textarea>
           </div>
-          <button type="submit" class="inline-flex items-center gap-3 border border-white/30 px-5 py-3 text-xs font-bold uppercase tracking-widest text-surface transition-colors hover:border-accent hover:text-accent">Send <span aria-hidden="true">&rarr;</span></button>
+          <button id="sendButton" type="submit" class="inline-flex items-center gap-3 border border-white/30 px-5 py-3 text-xs font-bold uppercase tracking-widest text-surface transition-colors hover:border-accent hover:text-accent">Send <span aria-hidden="true">&rarr;</span></button>
+          <p id="formStatus" class="hidden text-sm" role="status" aria-live="polite"></p>
         </form>
-        <div id="formThanks" class="hidden text-center py-12">
-          <p class="font-serif text-3xl mb-2">Signal received.</p>
-          <p class="text-muted text-sm">I’ll get back to you as soon as possible.</p>
-        </div>
       </div>
     </div>
   </section>
@@ -344,7 +338,39 @@
     </div>
   </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <script>
+    const emailJsPublicKey = 'USSDO4pCK0-6TDtNM';
+    const emailJsServiceId = 'service_zhwo8hl';
+    const emailJsTemplateId = 'template_rjx1blq';
+
+    emailjs.init({ publicKey: emailJsPublicKey });
+
+    const contactForm = document.getElementById('contactForm');
+    const sendButton = document.getElementById('sendButton');
+    const formStatus = document.getElementById('formStatus');
+
+    contactForm.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      sendButton.disabled = true;
+      sendButton.classList.add('opacity-50', 'cursor-wait');
+      formStatus.className = 'text-sm text-warm';
+      formStatus.textContent = 'Sending...';
+
+      try {
+        await emailjs.sendForm(emailJsServiceId, emailJsTemplateId, contactForm);
+        contactForm.reset();
+        formStatus.className = 'text-sm text-warm';
+        formStatus.textContent = 'Your message has been sent.';
+      } catch (error) {
+        formStatus.className = 'text-sm text-red-200';
+        formStatus.textContent = 'Something went wrong. Please try again or email me directly.';
+      } finally {
+        sendButton.disabled = false;
+        sendButton.classList.remove('opacity-50', 'cursor-wait');
+      }
+    });
+
     // Mobile menu
     const btn = document.getElementById('mobMenuBtn');
     const menu = document.getElementById('mobMenu');
